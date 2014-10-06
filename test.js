@@ -1,5 +1,5 @@
 /*!
- * object-extend <https://github.com/jonschlinkert/object-extend>
+ * extend-shallow <https://github.com/jonschlinkert/extend-shallow>
  *
  * Copyright (c) 2014 Jon Schlinkert, contributors.
  * Licensed under the MIT License

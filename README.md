@@ -1,4 +1,4 @@
-# object.extend [![NPM version](https://badge.fury.io/js/object.extend.svg)](http://badge.fury.io/js/object.extend)
+# extend-shallow [![NPM version](https://badge.fury.io/js/extend-shallow.svg)](http://badge.fury.io/js/extend-shallow)
 
 
 > Extend javascript object A with the properties of object B.
@@ -7,7 +7,7 @@
 #### Install with [npm](npmjs.org):
 
 ```bash
-npm i object.extend --save-dev
+npm i extend-shallow --save-dev
 ```
 
 ## Run tests
@@ -19,7 +19,7 @@ npm test
 ## Usage
 
 ```js
-var extend = require('object.extend');
+var extend = require('extend-shallow');
 
 extend({a: 'b'}, {c: 'd'})
 //=> {a: 'b', c: 'd'}

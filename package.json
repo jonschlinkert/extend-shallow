@@ -1,23 +1,23 @@
 {
-  "name": "object.extend",
+  "name": "extend-shallow",
   "description": "Extend javascript object A with the properties of object B.",
   "version": "0.1.0",
-  "homepage": "https://github.com/jonschlinkert/object.extend",
+  "homepage": "https://github.com/jonschlinkert/extend-shallow",
   "author": {
     "name": "Jon Schlinkert",
     "url": "https://github.com/jonschlinkert"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jonschlinkert/object.extend.git"
+    "url": "git://github.com/jonschlinkert/extend-shallow.git"
   },
   "bugs": {
-    "url": "https://github.com/jonschlinkert/object.extend/issues"
+    "url": "https://github.com/jonschlinkert/extend-shallow/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/jonschlinkert/object.extend/blob/master/LICENSE-MIT"
+      "url": "https://github.com/jonschlinkert/extend-shallow/blob/master/LICENSE-MIT"
     }
   ],
   "main": "index.js",

@@ -1,8 +1,7 @@
 'use strict';
 
 /**
- * Extend the target `obj` with properties from other
- * objects.
+ * Extend the target `obj` with the properties of other objects.
  *
  * @param  {Object}  `obj` The target object. Pass an empty object to shallow clone.
  * @param  {Objects}
