@@ -1,0 +1,46 @@
+{
+  "name": "object.extend",
+  "description": "Extend javascript object A with the properties of object B.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/object.extend",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/object.extend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/object.extend/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/object.extend/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "^4.0.4",
+    "verb": ">= 0.2.6"
+  },
+  "keywords": [
+    "extend",
+    "keys",
+    "merge",
+    "obj",
+    "object",
+    "prop",
+    "properties",
+    "property",
+    "props"
+  ]
+}
