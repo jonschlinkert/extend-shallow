@@ -1,6 +1,6 @@
 {
   "name": "extend-shallow",
-  "description": "Extend javascript object A with the properties of object B.",
+  "description": "Extend object A with the properties of object B. node.js/javascript util.",
   "version": "0.1.1",
   "homepage": "https://github.com/jonschlinkert/extend-shallow",
   "author": {
