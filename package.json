@@ -1,7 +1,7 @@
 {
   "name": "extend-shallow",
   "description": "Extend javascript object A with the properties of object B.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/jonschlinkert/extend-shallow",
   "author": {
     "name": "Jon Schlinkert",
@@ -42,5 +42,8 @@
     "properties",
     "property",
     "props"
-  ]
+  ],
+  "dependencies": {
+    "array-slice": "^0.2.2"
+  }
 }
