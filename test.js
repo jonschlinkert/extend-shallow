@@ -20,4 +20,14 @@ describe('extend', function () {
     extend(null).should.eql({});
     extend(undefined).should.eql({});
   });
+
+  describe('.extend():', function () {
+    it('should extend object a with object b:', function () {
+      extend({a: {b: 'b'}}, {b: {c: 'c'}}).should.eql({a: {b: 'b'}, b: {c: 'c'}});
+    });
+
+    it('should return an empty object when args are undefined:', function () {
+      extend().should.eql({});
+    });
+  });
 });
