@@ -16,23 +16,24 @@ module.exports = extend;
  * @return {Object}
  */
 
-function extend(o, objects) {
-  if (!o || !objects) { return o || {}; }
-  var len = arguments.length - 1;
-  for (var i = 0; i < len; i++) {
-    var obj = arguments[i + 1];
-    if (isObject(obj)) {
-      assign(o, obj);
-    }
+function extend(o) {
+  if (o == null) {
+    return {};
   }
-  return o;
-}
 
-function assign(o, obj) {
-  for (var key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      o[key] = obj[key];
+  var args = arguments;
+  var len = args.length - 1;
+
+  for (var i = 0; i < len; i++) {
+    var obj = args[i + 1];
+
+    if (isObject(obj)) {
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          o[key] = obj[key];
+        }
+      }
     }
   }
   return o;
-}
+};
