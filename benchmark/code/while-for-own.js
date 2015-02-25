@@ -14,13 +14,16 @@ module.exports = function extend(o, objects) {
     var obj = args[i++];
     if (obj) {
       var keys = Object.keys(obj);
-      var klen = keys.length;
+      var len = keys.length;
 
-      for (var j = 0; j < klen; j++) {
+      for (var j = 0; j < len; j++) {
         var key = keys[j];
-        o[key] = obj[key];
+        if (obj.hasOwnProperty(key)) {
+          o[key] = obj[key];
+        }
       }
     }
+
   }
   return o;
 };

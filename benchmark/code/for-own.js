@@ -2,7 +2,10 @@
 
 var slice = require('array-slice');
 
-module.exports = function extend(o) {
+module.exports = function extend(o, objects) {
+  if (o == null) { return {}; }
+  if (objects == null) { return o; }
+
   var args = slice(arguments, 1);
   var len = args.length;
 
@@ -10,7 +13,7 @@ module.exports = function extend(o) {
     var obj = args[i];
 
     for (var key in obj) {
-      if (!!obj[key]) {
+      if (obj.hasOwnProperty(key)) {
         o[key] = obj[key];
       }
     }

@@ -1,6 +1,7 @@
 'use strict';
 
 var slice = require('array-slice');
+var forOwn = require('for-own');
 
 module.exports = function extend(o, objects) {
   if (o == null) { return {}; }
@@ -8,19 +9,13 @@ module.exports = function extend(o, objects) {
 
   var args = slice(arguments, 1);
   var len = args.length;
-  var i = 0;
 
-  while (len--) {
-    var obj = args[i++];
-    if (obj) {
-      var keys = Object.keys(obj);
-      var klen = keys.length;
-
-      for (var j = 0; j < klen; j++) {
-        var key = keys[j];
-        o[key] = obj[key];
-      }
-    }
+  for (var i = 0; i < len; i++) {
+    var obj = args[i];
+    forOwn(obj, function (value, key) {
+      this[key] = value;
+    }, o);
   }
+
   return o;
 };

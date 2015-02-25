@@ -12,7 +12,7 @@ glob.sync('*.js', {cwd: code}).forEach(function (fp) {
   var fn = require(path.resolve(code, fp));
   var name = path.basename(fp, path.extname(fp));
 
-  glob.sync('*.js', {cwd: fixtures}).forEach(function (fixture) {
+  glob.sync('nested.js', {cwd: fixtures}).forEach(function (fixture) {
     fixture = path.resolve(fixtures, fixture);
 
     var base = path.basename(fixture, path.extname(fixture));

@@ -1,8 +1,9 @@
 'use strict';
 
-var slice = require('array-slice');
+module.exports = function extend(o, objects) {
+  if (o == null) { return {}; }
+  if (objects == null) { return o; }
 
-module.exports = function extend(o) {
   var args = [].slice.call([], arguments, 1);
   var len = args.length;
 
@@ -15,6 +16,5 @@ module.exports = function extend(o) {
       }
     }
   }
-
   return o;
 };

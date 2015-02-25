@@ -14,10 +14,10 @@ module.exports = function extend(o, objects) {
     var obj = args[i++];
     if (obj) {
       var keys = Object.keys(obj);
-      var klen = keys.length;
+      var klen = keys.length, j = 0;
 
-      for (var j = 0; j < klen; j++) {
-        var key = keys[j];
+      while (klen--) {
+        var key = keys[j++];
         o[key] = obj[key];
       }
     }
