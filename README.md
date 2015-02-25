@@ -1,4 +1,4 @@
-# extend-shallow [![NPM version](https://badge.fury.io/js/extend-shallow.svg)](http://badge.fury.io/js/extend-shallow)
+# extend-shallow [![NPM version](https://badge.fury.io/js/extend-shallow.svg)](http://badge.fury.io/js/extend-shallow)  [![Build Status](https://travis-ci.org/jonschlinkert/extend-shallow.svg)](https://travis-ci.org/jonschlinkert/extend-shallow) 
 
 > Extend an object with the properties of additional objects. node.js/javascript util.
 
