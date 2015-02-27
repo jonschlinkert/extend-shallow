@@ -22,9 +22,15 @@ describe('extend', function () {
     extend({a: 'b', c: 'd'}, {c: 'e'}).should.eql({a: 'b', c: 'e'});
   });
 
-  it('should skip over non-objects.', function () {
+  it('should skip over non-plain objects.', function () {
     extend({a: 'b'}, 'foo', {c: 'd'}).should.eql({a: 'b', c: 'd'});
+    extend({a: 'b'}, null, {c: 'd'}).should.eql({a: 'b', c: 'd'});
+    extend({a: 'b'}, new Date(), {c: 'd'}).should.eql({a: 'b', c: 'd'});
     extend({a: 'b', c: 'd'}, 'bar', {c: 'e'}).should.eql({a: 'b', c: 'e'});
+  });
+
+  it('should return an empty object when the first arg is not a plain object.', function () {
+    extend(/foo/, {a: 'b'}, new Date(), {c: 'd'}).should.eql({});
   });
 
   it('should return an empty object when args are undefined.', function () {

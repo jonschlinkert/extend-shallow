@@ -1,6 +1,6 @@
 'use strict';
 
-var isObject = require('is-plain-object');
+var typeOf = require('kind-of');
 
 /**
  * Expose `extend`
@@ -17,17 +17,15 @@ module.exports = extend;
  */
 
 function extend(o) {
-  if (o == null) {
-    return {};
-  }
-
+  if (typeOf(o) !== 'object') { return {}; }
   var args = arguments;
   var len = args.length - 1;
 
   for (var i = 0; i < len; i++) {
     var obj = args[i + 1];
 
-    if (isObject(obj)) {
+    // if (typeOf(obj) === 'object' && typeOf(obj) !== 'regexp') {
+    if (typeOf(obj) === 'object' && typeOf(obj) !== 'regexp') {
       for (var key in obj) {
         if (obj.hasOwnProperty(key)) {
           o[key] = obj[key];
