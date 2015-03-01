@@ -24,7 +24,6 @@ function extend(o) {
   for (var i = 0; i < len; i++) {
     var obj = args[i + 1];
 
-    // if (typeOf(obj) === 'object' && typeOf(obj) !== 'regexp') {
     if (typeOf(obj) === 'object' && typeOf(obj) !== 'regexp') {
       for (var key in obj) {
         if (obj.hasOwnProperty(key)) {
