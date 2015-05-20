@@ -14,10 +14,7 @@
   "bugs": {
     "url": "https://github.com/jonschlinkert/extend-shallow/issues"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/jonschlinkert/extend-shallow/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "files": [
     "index.js"
   ],
