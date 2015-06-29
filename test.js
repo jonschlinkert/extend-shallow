@@ -30,8 +30,25 @@ describe('extend', function () {
     extend({a: 'b', c: 'd'}, 'bar', {c: 'e'}).should.eql({a: 'b', c: 'e'});
   });
 
-  it('should return an empty object when the first arg is not a plain object.', function () {
-    extend(/foo/, {a: 'b'}, new Date(), {c: 'd'}).should.eql({});
+  it('should extend a regex.', function () {
+    var fixture = /foo/;
+    extend(fixture, {a: 'b'}, new Date(), {c: 'd'});
+    fixture.a.should.equal('b');
+    fixture.c.should.equal('d');
+  });
+
+  it('should extend a function.', function () {
+    var fixture = function() {};
+    extend(fixture, {a: 'b'}, new Date(), {c: 'd'});
+    fixture.a.should.equal('b');
+    fixture.c.should.equal('d');
+  });
+
+  it('should extend an array.', function () {
+    var arr = [];
+    extend(arr, {a: 'b'}, new Date(), {c: 'd'});
+    arr.a.should.equal('b');
+    arr.c.should.equal('d');
   });
 
   it('should return an empty object when args are undefined.', function () {
