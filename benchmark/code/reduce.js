@@ -1,17 +1,17 @@
 'use strict';
 
-var slice = require('array-slice');
+var isObject = require('is-extendable');
 
 module.exports = function extend(o, objects) {
-  if (o == null) { return {}; }
-  if (objects == null) { return o; }
+  if (!isObject(o)) {o = {};}
+  var args = [].slice.call(arguments, 1);
 
-  var args = slice(arguments, 1);
-
-  return args.reduce(function (acc, value, i) {
-    for (var key in value) {
-      if (value.hasOwnProperty(key)) {
-        acc[key] = value[key];
+  return args.reduce(function (acc, val, i) {
+    if (isObject(val)) {
+      for (var key in val) {
+        if (val.hasOwnProperty(key)) {
+          acc[key] = val[key];
+        }
       }
     }
     return acc;

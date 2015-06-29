@@ -1,23 +1,24 @@
 'use strict';
 
-var slice = require('array-slice');
+var isObject = require('is-extendable');
 
-module.exports = function extend(o, objects) {
-  if (o == null) { return {}; }
-  if (objects == null) { return o; }
+module.exports = extend;
 
-  var args = slice(arguments, 1);
-  var len = args.length;
-  var i = 0;
-
+function extend(o, objects) {
+  if (!isObject(o)) {
+    o = {};
+  }
+  var len = arguments.length, i = 1;
   while (len--) {
-    var obj = args[i++];
+    var obj = arguments[i++];
 
-    for (var key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        o[key] = obj[key];
+    if (isObject(obj)) {
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          o[key] = obj[key];
+        }
       }
     }
   }
   return o;
-};
+}

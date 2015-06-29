@@ -1,15 +1,28 @@
 'use strict';
 
+var isObject = require('is-extendable');
+
 module.exports = function extend(o, objects) {
-  if (!o || !objects) { return o || {}; }
+  if (!isObject(o)) { o = {}; }
 
-  var len = arguments.length - 1;
-  for (var i = 0; i < len; i++) {
-    var obj = arguments[i + 1];
+  var len = arguments.length;
+  for (var i = 1; i < len; i++) {
+    var obj = arguments[i];
 
-    for (var key in obj) {
-      o[key] = obj[key];
+    if (isObject(obj)) {
+      assign(o, obj);
+
+      // for (var key in obj) {
+      //   o[key] = obj[key];
+      // }
     }
   }
   return o;
 };
+
+
+function assign(a, b) {
+  for (var key in b) {
+    a[key] = b[key];
+  }
+}
