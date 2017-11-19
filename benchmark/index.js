@@ -1,23 +1,15 @@
 'use strict';
 
-var path = require('path');
-var argv = require('minimist')(process.argv.slice(2));
-// var code = 'code/*.js';
+const path = require('path');
+const argv = require('minimist')(process.argv.slice(2));
+const suite = require('benchmarked');
+const glob = argv._[0] || '*';
 
-// if (argv && argv._) {
-//   code = name(argv._[0]);
-// }
-
-var Suite = require('benchmarked');
-var suite = new Suite({
-  result: true,
-  fixtures: 'fixtures/*.js',
-  add: 'code/{{while,for}-arguments-in,_current}.js',
-  cwd: __dirname
-});
-
-suite.run();
-
-function name(str) {
-  return 'code/{_current,' + str + '}{,*}';
-}
+suite.run({code: `code/${glob}.js`, fixtures: `fixtures/*.js`})
+  .then(function(stats) {
+    stats.forEach(function(target) {
+      target.fastest = target.fastest || ['n/a'];
+    });
+    console.log(suite.render(stats));
+  })
+  .catch(console.error);

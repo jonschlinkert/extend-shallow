@@ -1,10 +1,9 @@
 
-var isObject = require('is-plain-object');
+var isObject = require('is-extendable');
 
 module.exports = function extend(a, b) {
   if (!a) return {};
   if (!b) return a;
-
   var len = arguments.length - 1, i = 1;
   while (len--) {
     var obj = arguments[i++];

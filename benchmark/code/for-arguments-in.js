@@ -11,10 +11,6 @@ module.exports = function extend(o, objects) {
 
     if (isObject(obj)) {
       assign(o, obj);
-
-      // for (var key in obj) {
-      //   o[key] = obj[key];
-      // }
     }
   }
   return o;
