@@ -4,6 +4,10 @@
   "version": "2.0.1",
   "homepage": "https://github.com/jonschlinkert/extend-shallow",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Peter deHaan (http://about.me/peterdehaan)"
+  ],
   "repository": "jonschlinkert/extend-shallow",
   "bugs": {
     "url": "https://github.com/jonschlinkert/extend-shallow/issues"

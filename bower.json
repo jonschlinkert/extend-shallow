@@ -43,5 +43,22 @@
     "utility",
     "utils",
     "value"
+  ],
+  "version": "2.0.1",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/extend-shallow/issues"
+  },
+  "files": [
+    "index.js"
+  ],
+  "ignore": [
+    "actual",
+    "bower_components",
+    "fixtures",
+    "node_modules",
+    "temp",
+    "test",
+    "test.js",
+    "tmp"
   ]
 }
