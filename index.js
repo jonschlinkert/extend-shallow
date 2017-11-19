@@ -1,19 +1,18 @@
 'use strict';
 
-var isObject = require('is-extendable');
+var isExtendable = require('is-extendable');
 
-module.exports = function extend(o/*, objects*/) {
-  if (!isObject(o)) { o = {}; }
-
-  var len = arguments.length;
-  for (var i = 1; i < len; i++) {
-    var obj = arguments[i];
-
-    if (isObject(obj)) {
-      assign(o, obj);
+module.exports = Object.assign || function(obj/*, objects*/) {
+  if (obj === null || typeof obj === 'undefined') {
+    throw new TypeError('expected an object');
+  }
+  for (var i = 1; i < arguments.length; i++) {
+    var val = arguments[i];
+    if (isObject(val)) {
+      assign(obj, val);
     }
   }
-  return o;
+  return obj;
 };
 
 function assign(a, b) {
@@ -22,6 +21,10 @@ function assign(a, b) {
       a[key] = b[key];
     }
   }
+}
+
+function isObject(val) {
+  return (val && typeof val === 'object') || isExtendable(val);
 }
 
 /**
