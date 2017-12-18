@@ -6,8 +6,14 @@ module.exports = Object.assign || function(obj/*, objects*/) {
   if (obj === null || typeof obj === 'undefined') {
     throw new TypeError('expected an object');
   }
+  if (!isObject(obj)) {
+    obj = {};
+  }
   for (var i = 1; i < arguments.length; i++) {
     var val = arguments[i];
+    if (isString(val)) {
+      val = toObject(val);
+    }
     if (isObject(val)) {
       assign(obj, val);
     }
@@ -21,6 +27,18 @@ function assign(a, b) {
       a[key] = b[key];
     }
   }
+}
+
+function isString(val) {
+  return (val && typeof val === 'string');
+}
+
+function toObject(str) {
+  var obj = {};
+  for (var i in str) {
+    obj[i] = str[i];
+  }
+  return obj;
 }
 
 function isObject(val) {
