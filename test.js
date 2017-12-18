@@ -8,11 +8,11 @@
 'use strict';
 
 require('mocha');
-const hasSymbol = typeof global.Symbol === 'function';
-const path = require('path');
-const argv = require('minimist')(process.argv.slice(2));
-const assert = require('assert');
-const extend = require('./');
+var hasSymbol = typeof global.Symbol === 'function';
+var path = require('path');
+var argv = require('minimist')(process.argv.slice(2));
+var assert = require('assert');
+var extend = require('./');
 
 if (argv && argv.lib) {
   extend = require(path.resolve('benchmark/code', argv.lib));
@@ -31,21 +31,21 @@ describe('extend', function() {
   });
 
   it('should extend a regex', function() {
-    const fixture = /foo/;
+    var fixture = /foo/;
     extend(fixture, {a: 'b'}, new Date(), {c: 'd'});
     assert.equal(fixture.a, 'b');
     assert.equal(fixture.c, 'd');
   });
 
   it('should extend a function', function() {
-    const fixture = function() {};
+    var fixture = function() {};
     extend(fixture, {a: 'b'}, new Date(), {c: 'd'});
     assert.equal(fixture.a, 'b');
     assert.equal(fixture.c, 'd');
   });
 
   it('should extend an array', function() {
-    const arr = [];
+    var arr = [];
     extend(arr, {a: 'b'}, new Date(), {c: 'd'});
     assert.equal(arr.a, 'b');
     assert.equal(arr.c, 'd');
@@ -69,24 +69,24 @@ describe('extend', function() {
 
   it('should not extend non-enumerable symbols', function() {
     if (!hasSymbol) return this.skip();
-    const fixture = {};
-    const obj = {};
-    const symbol = Symbol('foo');
+    var fixture = {};
+    var obj = {};
+    var symbol = Symbol('foo');
     Object.defineProperty(obj, symbol, {enumerable: false, value: 'bar'});
     extend(fixture, obj);
-    const other = extend({}, obj);
+    var other = extend({}, obj);
     assert.equal(typeof fixture[symbol], 'undefined');
     assert.equal(typeof other[symbol], 'undefined');
   });
 
   it('should extend symbol properties', function() {
     if (!hasSymbol) return this.skip();
-    const fixture = {};
-    const obj = {};
-    const symbol = Symbol('foo');
+    var fixture = {};
+    var obj = {};
+    var symbol = Symbol('foo');
     obj[symbol] = 'bar';
     extend(fixture, obj);
-    const other = extend({}, obj);
+    var other = extend({}, obj);
     assert.equal(fixture[symbol], 'bar');
     assert.equal(other[symbol], 'bar');
   });
