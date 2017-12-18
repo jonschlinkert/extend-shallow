@@ -4,7 +4,7 @@ var isExtendable = require('is-extendable');
 
 module.exports = Object.assign || function(obj/*, objects*/) {
   if (obj === null || typeof obj === 'undefined') {
-    throw new TypeError('expected an object');
+    throw new TypeError('Cannot convert undefined or null to object');
   }
   if (!isObject(obj)) {
     obj = {};
