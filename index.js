@@ -1,6 +1,7 @@
 'use strict';
 
 var isExtendable = require('is-extendable');
+var assignSymbols = require('assign-symbols');
 
 module.exports = Object.assign || function(obj/*, objects*/) {
   if (obj === null || typeof obj === 'undefined') {
@@ -16,6 +17,7 @@ module.exports = Object.assign || function(obj/*, objects*/) {
     }
     if (isObject(val)) {
       assign(obj, val);
+      assignSymbols(obj, val);
     }
   }
   return obj;
@@ -25,16 +27,6 @@ function assign(a, b) {
   for (var key in b) {
     if (hasOwn(b, key)) {
       a[key] = b[key];
-    }
-  }
-
-  if (typeof Object.getOwnPropertySymbols === 'function') {
-    var symbols = Object.getOwnPropertySymbols(b);
-    for (var i = 0; i <= symbols.length; i++) {
-      var symbol = symbols[i];
-      if (isEnum(b, symbol)) {
-        a[symbol] = b[symbol];
-      }
     }
   }
 }

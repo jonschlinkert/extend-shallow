@@ -24,6 +24,7 @@
     "test": "mocha"
   },
   "dependencies": {
+    "assign-symbols": "^1.0.0",
     "is-extendable": "^1.0.1"
   },
   "devDependencies": {
