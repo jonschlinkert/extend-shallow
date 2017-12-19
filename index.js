@@ -27,6 +27,16 @@ function assign(a, b) {
       a[key] = b[key];
     }
   }
+
+  if (typeof Object.getOwnPropertySymbols === 'function') {
+    var symbols = Object.getOwnPropertySymbols(b);
+    for (var i = 0; i <= symbols.length; i++) {
+      var symbol = symbols[i];
+      if (isEnum(b, symbol)) {
+        a[symbol] = b[symbol];
+      }
+    }
+  }
 }
 
 function isString(val) {
@@ -51,4 +61,8 @@ function isObject(val) {
 
 function hasOwn(obj, key) {
   return Object.prototype.hasOwnProperty.call(obj, key);
+}
+
+function isEnum(obj, key) {
+  return Object.prototype.propertyIsEnumerable.call(obj, key);
 }
