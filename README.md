@@ -1,6 +1,9 @@
 # extend-shallow [![NPM version](https://img.shields.io/npm/v/extend-shallow.svg?style=flat)](https://www.npmjs.com/package/extend-shallow) [![NPM monthly downloads](https://img.shields.io/npm/dm/extend-shallow.svg?style=flat)](https://npmjs.org/package/extend-shallow) [![NPM total downloads](https://img.shields.io/npm/dt/extend-shallow.svg?style=flat)](https://npmjs.org/package/extend-shallow) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/extend-shallow.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/extend-shallow)
 
-> Extend an object with the properties of additional objects. node.js/javascript util.
+> The `extend-shallow` is considered Legacy. While it is still maintained, new code should use the [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#browser_compatibility) instead.
+
+
+Extend an object with the properties of additional objects. node.js/javascript util.
 
 Please consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.
 
